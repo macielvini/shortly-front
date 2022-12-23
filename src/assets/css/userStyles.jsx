@@ -7,7 +7,8 @@ const UserStyles = createGlobalStyle`
 
   body {
     font-family: 'Lexend Deca', sans-serif;
-    background-color: lightblue;
+    background: #262835;
+    color: #fff;
   }
 `;
 
