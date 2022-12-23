@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Nav() {
   return (
     <StyledNav>
       <ul>
-        <NavItem>Home</NavItem>
-        <NavItem>Cadastrar-se</NavItem>
+        <Link to={"/signin"}>
+          <NavItem>Entrar</NavItem>
+        </Link>
+        <Link to={"/signup"}>
+          <NavItem>Cadastrar-se</NavItem>
+        </Link>
       </ul>
     </StyledNav>
   );
@@ -19,7 +24,11 @@ const StyledNav = styled.nav`
   width: 100vw;
   height: 80px;
 
-  padding-bottom: 15px;
+  padding-bottom: 25px;
+
+  background: #262835;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   &,
   ul {

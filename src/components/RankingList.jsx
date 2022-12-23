@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -6,11 +5,10 @@ import rankingIcon from "../assets/img/ranking.svg";
 import { getRanking } from "../services/api";
 import { RankingItem } from "./RankingItem";
 
-export function Ranking() {
+export default function RankingList() {
   const [rankingList, setRankingList] = useState([]);
 
   useEffect(() => {
-    // axios.get("https://shortly-api-yxcy.onrender.com/ranking")
     getRanking()
       .then((res) => setRankingList(res.data))
       .catch((err) => console.log(err));
