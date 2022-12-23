@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const UserStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
-    outline: 1px dashed yellow;
+    /* outline: 1px dashed yellow; */
   }
 
   body {
@@ -16,6 +16,10 @@ const UserStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
   }
 `;
 

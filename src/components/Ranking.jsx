@@ -1,15 +1,40 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import rankingIcon from "../assets/img/ranking.svg";
+import { getRanking } from "../services/api";
+import { RankingItem } from "./RankingItem";
 
 export function Ranking() {
+  const [rankingList, setRankingList] = useState([]);
+
+  useEffect(() => {
+    // axios.get("https://shortly-api-yxcy.onrender.com/ranking")
+    getRanking()
+      .then((res) => setRankingList(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <Container>
       <RankingTitle>
         <img src={rankingIcon} alt="ícone de um troféu" />
         Ranking
       </RankingTitle>
-      <RankingContainer>ljljl</RankingContainer>
+      <RankingContainer>
+        {rankingList.length > 0
+          ? rankingList.map((r, index) => (
+              <RankingItem
+                key={index}
+                index={index + 1}
+                name={r.name}
+                linkCount={r.linkCount}
+                visitCount={r.visitCount}
+              />
+            ))
+          : "Carregando..."}
+      </RankingContainer>
     </Container>
   );
 }
@@ -37,9 +62,12 @@ const Container = styled.div`
   gap: 50px;
 `;
 
-const RankingContainer = styled.div`
-  width: 1017px;
-  height: 241px;
+const RankingContainer = styled.ul`
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 
   background: #000000;
   border: 1px solid #31c86d;
@@ -47,9 +75,4 @@ const RankingContainer = styled.div`
   border-radius: 24px;
 
   padding: 20px 30px;
-
-  font-weight: 700;
-  font-size: 22px;
-
-  color: #c4ccdc;
 `;
