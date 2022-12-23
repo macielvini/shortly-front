@@ -16,6 +16,8 @@ const UserStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: white;
+    
     &:hover{
       cursor: pointer;
     }
