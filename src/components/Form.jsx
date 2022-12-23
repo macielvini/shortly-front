@@ -60,6 +60,7 @@ const StyledForm = styled.form`
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px #000 inset;
     border: 1px solid #31c86d;
     -webkit-text-fill-color: white;
     -webkit-box-shadow: 0 0 0px 1000px #000 inset;
