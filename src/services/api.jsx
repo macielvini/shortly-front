@@ -15,3 +15,7 @@ export function getRanking() {
 export function signUp(body) {
   return api.post("/signup", body);
 }
+
+export function signIn(body) {
+  return api.post("/signin", body);
+}
