@@ -11,3 +11,7 @@ api.defaults.headers["Authorization"] = `Bearer ${TOKEN}`;
 export function getRanking() {
   return api.get("/ranking");
 }
+
+export function signUp(body) {
+  return api.post("/signup", body);
+}
