@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Logo from "../components/Logo";
-import Nav from "../components/Nav";
-import { Ranking } from "../components/Ranking";
+import Logo from "../../components/Logo";
+import Nav from "../../components/Nav";
+import { Ranking } from "../../components/Ranking";
 
 export default function HomePage() {
   return (
