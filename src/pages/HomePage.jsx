@@ -1,40 +1,24 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
 import Nav from "../components/Nav";
+import { Ranking } from "../components/Ranking";
 
 export default function HomePage() {
   return (
     <>
       <Nav />
       <Logo />
-      <Text>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. In molestias
-        illo ut similique quibusdam ipsum molestiae qui excepturi, atque
-        praesentium, modi doloribus ullam dicta error magnam quidem mollitia
-        dignissimos nemo!
-      </Text>
+      <Ranking />
+      <Invite>Crie sua conta para usar nosso serviço!</Invite>
     </>
   );
 }
 
-const StyledNav = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
+const Invite = styled.p`
+  font-weight: 700;
+  font-size: 36px;
 
-  width: 100vw;
-  height: 80px;
+  text-align: center;
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: end;
-  gap: 20px;
-
-  padding-bottom: 15px;
-
-  background: white;
-`;
-
-const Text = styled.p`
-  width: 400px;
+  color: #c4ccdc;
 `;

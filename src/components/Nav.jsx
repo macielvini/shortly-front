@@ -3,8 +3,10 @@ import styled from "styled-components";
 export default function Nav() {
   return (
     <StyledNav>
-      <ul>Home</ul>
-      <ul>Cadastrar-se</ul>
+      <ul>
+        <NavItem>Home</NavItem>
+        <NavItem>Cadastrar-se</NavItem>
+      </ul>
     </StyledNav>
   );
 }
@@ -17,12 +19,23 @@ const StyledNav = styled.nav`
   width: 100vw;
   height: 80px;
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: end;
-  gap: 20px;
-
   padding-bottom: 15px;
 
-  background: white;
+  &,
+  ul {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+  }
+
+  ul {
+    gap: 20px;
+  }
+`;
+
+const NavItem = styled.li`
+  &:hover {
+    color: #31c86d;
+    cursor: pointer;
+  }
 `;
